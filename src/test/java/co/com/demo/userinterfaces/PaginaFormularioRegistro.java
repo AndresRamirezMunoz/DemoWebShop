@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import static net.serenitybdd.screenplay.targets.BaseTarget.the;
 
-public class FormularioRegistro {
+public class PaginaFormularioRegistro {
 
     public static final String MENSAJE_REGISTRO_EXITOSO = "Your registration completed";
 

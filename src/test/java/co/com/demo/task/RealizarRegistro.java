@@ -1,6 +1,6 @@
 package co.com.demo.task;
 
-import co.com.demo.interactions.LlenarFormulario;
+import co.com.demo.interactions.LlenarFormularioRegistro;
 import co.com.demo.models.DatosPersonales;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -19,7 +19,7 @@ public class RealizarRegistro implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                LlenarFormulario.conDatos(datos)
+                LlenarFormularioRegistro.conDatos(datos)
         );
     }
 

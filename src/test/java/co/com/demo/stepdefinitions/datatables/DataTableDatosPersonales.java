@@ -1,4 +1,4 @@
-package co.com.demo.stepdefinitions;
+package co.com.demo.stepdefinitions.datatables;
 
 
 import co.com.demo.models.DatosPersonales;

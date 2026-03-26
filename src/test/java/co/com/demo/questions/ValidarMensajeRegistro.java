@@ -3,7 +3,7 @@ package co.com.demo.questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.demo.userinterfaces.FormularioRegistro.*;
+import static co.com.demo.userinterfaces.PaginaFormularioRegistro.*;
 
 public class ValidarMensajeRegistro implements Question<Boolean> {
     @Override

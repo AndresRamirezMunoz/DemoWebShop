@@ -7,16 +7,17 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.demo.userinterfaces.FormularioRegistro.*;
-import static co.com.demo.userinterfaces.PaginaPrincipal.OPCION_REGISTRO;
+import static co.com.demo.userinterfaces.PaginaFormularioRegistro.*;
+import static co.com.demo.userinterfaces.PaginaPrincipal.HEADER_REGISTRO;
+import static co.com.demo.userinterfaces.PaginaPrincipal.OPCION_HEADER;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 
-public class LlenarFormulario implements Interaction {
+public class LlenarFormularioRegistro implements Interaction {
 
     private final DatosPersonales DATOS;
 
-    public LlenarFormulario(DatosPersonales datos) {
+    public LlenarFormularioRegistro(DatosPersonales datos) {
         this.DATOS = datos;
     }
 
@@ -24,8 +25,8 @@ public class LlenarFormulario implements Interaction {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                WaitUntil.the(OPCION_REGISTRO, isClickable()).forNoMoreThan(10).seconds(),
-                Click.on(OPCION_REGISTRO),
+                WaitUntil.the(OPCION_HEADER.of(HEADER_REGISTRO), isClickable()).forNoMoreThan(10).seconds(),
+                Click.on(OPCION_HEADER.of(HEADER_REGISTRO)),
                 Click.on(INPUT_GENERO.of(DATOS.getGENERO())),
                 Enter.theValue(DATOS.getNOMBRE()).into(CAMPO_NOMBRE),
                 Enter.theValue(DATOS.getAPELLIDO()).into(CAMPO_APELLIDO),
@@ -36,7 +37,7 @@ public class LlenarFormulario implements Interaction {
         );
     }
 
-    public static LlenarFormulario conDatos(DatosPersonales datos) {
-        return instrumented(LlenarFormulario.class, datos);
+    public static LlenarFormularioRegistro conDatos(DatosPersonales datos) {
+        return instrumented(LlenarFormularioRegistro.class, datos);
     }
 }
